@@ -1,6 +1,6 @@
-# RESTful Star Notary API using Private Blockchain with Node.js Framework
+# Decentralized Star Notary
 
-A RESTful Web API using **Express.js** that operates a private Blockchain. It registers users with stars using Bitcoin wallet.
+Decentralized Star Notary using Ethereum.
 
 ## Getting Started
 
@@ -10,21 +10,52 @@ These instructions will get you a copy of the project up and running on your loc
 
 - Node.js
 - NPM (This should be installed already when you install Node.js)
-- Bitcoin Wallet (eg. Electrum) (The code could run perfectly without it, but you must have that to test the code.)
+- Truffle(v5.0.13)
+- OpenZeppelin(v2.1.2)
+- Ganache (optional)
 
 
-### Installing
 
-```
-npm install
-```
+## About my token
+- Name: Star Notary 123982398
+- Symbol: SNT
+- Address: 0x1fb6fc34d4f3bf3943d65068f0a5c22c835b7190
 
 
 ## Deployment
-
+### Backend
+- To run on a local Ethereum blockchain using Truffle
 ```
-node index.js
+truffle develop
+compile
+migrate --reset
 ```
 
-The server will run on port 8000
+The server will run on port 9545
+
+- To run on a local Ethereum blockchain using Ganache 
+```
+truffle console
+compile
+migrate --reset
+```
+
+The server will run on port 8545 (if using CLI) or 7545 (if using GUI)
+
+- To run on Rinkeby test network
+    - 1. Create a directly just under the project folder named `secrets`
+    - 2. Inside that folder, store your Infura APP Secret in a file named `infura.txt`, and store your MetaMask mnemonic in a file named `mnemonic.txt`
+    - 3. 
+    ```
+    truffle migrate --reset --network rinkeby
+    ```
+
+### Frontend
+- 1. `cd app`
+- 2. `npm run dev`
+- 3. Go to `localhost:8080`
+
+
+
+
 
